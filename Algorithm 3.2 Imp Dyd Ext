@@ -1,0 +1,50 @@
+# Algorithm 3.2 (Imp DyD Ext) 
+
+# Run in Sage v9.2
+
+# Input
+    # an odd prime p
+    # lower bound on m1, lower_m1
+    # upper bound on m1, upper_m1
+#Output
+    # List, D, of all discriminants of quadratic number fields corresponding to pairs of triples (m1, y1, z1), 
+        # (m2, y2, z2) satisfying Proposition (2.3) (b) for n=p with lower_m1 <= m1 <= upper_m1 and 2 <= m2 < m1
+
+
+def Imp_DyD_Ext(p, lower_m1, upper_m1):
+    print("Running Algorithm 3.2/ Imp Dyd Ext for")
+    print("p= "+str(p)+", lower_m1 = "+str(lower_m1)+", upper_m1 = "+str(upper_m1))
+    print("   Status:")
+    D = set() 
+    for m1 in range(lower_m1, upper_m1 + 1):
+        print("     m1 = "+str(m1))
+        for m2 in range(2, m1):
+         
+            t = m1 - m2
+            N = int((m1^p - m2^p)/t)
+
+            for t_prime in divisors(t):
+                t_prime_prime = t/t_prime
+                for N_prime in divisors(N):
+                    if N_prime <= N^(1/2):
+                        N_prime_prime = N/N_prime
+                        y = t_prime*N_prime - t_prime_prime*N_prime_prime
+                        if y^2 - 4*m2^p < 0:
+                            delta = squarefree_part(y^2 - 4*m2^p)
+                            if delta % 4 != 1:
+                                delta= 4*delta
+                            if (y^2-4*m2^p) % delta == 0:
+                                z = ((y^2-4*m2^p)/delta)^(1/2)
+                                c1 = gcd(m1, z)
+                                c2 = gcd(m2, z)
+                                if delta % c1 == 0 and delta % c2 == 0 and c1 % 4 != 0 and c2 % 4 != 0:
+                                    if m1 < (-delta/4)^(1/2):
+                                        if p == 3:
+                                            D.add(delta)
+                                        else:
+                                            if m2^((p-1)/2) % m1 != 0 and m2^((p-1)/2) < (-delta/4)^(1/2):
+                                                D.add(delta)
+                                                
+            t += 1
+    print("Done!")
+    return(list(D))
