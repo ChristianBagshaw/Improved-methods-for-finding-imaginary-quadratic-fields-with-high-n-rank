@@ -12,7 +12,7 @@
         # (m2, y2, lambda2*z2) satisfying Proposition (2.3) (b) for n=p with lower_m1 <= m1 <= upper_m1 and 2 <= m2 < m1. 
 
 
-def DyD_Ext(p, lambda1, lambda2, lower_m1, upper_m1):
+def Exp_Search(p, lambda1, lambda2, lower_m1, upper_m1):
     print("Running Algorithm 3.3/ Exp Search for")
     print("p= "+str(p)+", lambda1 = "+str(lambda1)+", lambda2 = "+str(lambda2)+", lower_m1 = "+str(lower_m1)+", upper_m1 = "+str(upper_m1))
     print("   Status:")
