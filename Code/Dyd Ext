@@ -1,8 +1,7 @@
 # This contains an implementation of Diaz y Diaz's original method, as well as it's natural extension to p > 3. 
+  # This is described in detail in Section 3.1. 
   # In Section 4 this is referred to as "Dyd Ext". 
   
-
-# Run in Sage v9.2
 
 # Input
     # an odd prime p
