@@ -1,0 +1,112 @@
+# Algorithm 3.2 Improved Alg, p > 3 branch
+
+# Algorithm 3.2 uses two slightly different ideas, depending on whether p=3 or p > 3. 
+  # THIS FILE CORRESPONDS TO p = 3, AND WILL NOT WORK FOR p>3.
+
+    
+    
+# Memory will quickly become an issue if this code is run verbatim for a large computation, since 
+    # a lot of data is being stored in dictionaries. In a large computation, this data 
+    # should be stored outside of memory. 
+  
+  
+    
+
+
+
+# Input
+    # Set of integer pairs {(lambda_i1, lambda_i2): "lambdas"
+    # Lower bound on m_1: "lower_m1"
+    # Upper bound on m_1: "upper_m1"
+#Output
+    # A list, "D", consisting of discriminants, each corresponding to a non-empty set of triples 
+        # {(m_i, y_i, (lambda_ij)*z_i)} satisfying Proposition (2.3) (a) for n=3 with 
+        # lower_m1 <= m_1 <= upper_m1 and 2 <= m_2 < m_1, such that the ideal classes corresponding to the triples 
+        # {(m_i, y_i, (lambda_ij)z_i)} generate a subgroup of the ideal class group of 
+        # Q(sqrt{delta}) isomorphic to (Z/3Z)^k for some k > 1. 
+        
+
+from math import sqrt
+import itertools
+import numpy 
+       
+    
+def Explicit_Ind(lambdas, lower_m1, upper_m1):
+    print("Running Algorithm 3.2 p=3 for")
+    print("p= "+str(3)+", lambdas = "+str(lambdas)+", lower_m1 = "+str(lower_m1)+", upper_m1 = "+str(upper_m1))
+    
+    ideals = {}
+    
+    for (lambda1, lambda2) in lambdas:
+        for m1 in range(lower_m1, upper_m1 + 1):
+
+            for m2 in range(2, m1):
+
+                N = 4*lambda2^2*m1^3 - 4*lambda1^2*m2^3
+                if N < 0:
+                    continue 
+                sqN = sqrt(N)
+                for a in divisors(N):
+                    if a <= sqN:
+                        b = N/a
+                        if (2*lambda2).divides(a+b):
+
+                            y1 = (a+b)/(2*lambda2)
+                            
+                            t = y1^2 - 4*m1^3
+                            if t < 0:
+                                delta = t.squarefree_part()
+                                if delta % 4 != 1:
+                                      delta = 4*delta
+                                if delta.divides(t):
+                                      z1 = int(sqrt(t/delta))
+                                      c1 = gcd(m1,z1)
+                                      if c1.divides(delta) and not 4.divides(c1):
+                                          if m1 < sqrt(-delta/4):
+                                              if delta in ideals:
+                                                  ideals[delta].append(m1)
+                                              else:
+                                                  ideals[delta] = [m1]
+
+
+
+                        if (2*lambda1).divides(a-b):
+                            y2 = (a-b)/(2*lambda1)
+
+                            t = y2^2 - 4*m2^3
+                            if t < 0:
+                                delta = t.squarefree_part()
+                                if delta % 4 != 1:
+                                      delta = 4*delta
+                                if delta.divides(t):
+                                      z2 = int(sqrt(t/delta))
+                                      c2 = gcd(m2,z2)
+                                      if c2.divides(delta) and not 4.divides(c2):
+                                          if m2 < sqrt(-delta/4):
+                                              if delta in ideals:
+                                                  ideals[delta].append(m2)
+                                              else:
+                                                  ideals[delta] = [m2]
+                        
+                    
+   
+                                                
+           
+    
+    print("Done generating norms")
+
+
+    # the following carries out lines 27-29 in Algorithm 3.2
+    D = []
+    for delta in ideals:
+        if len(set(ideals[delta])) > 1:
+            D.append(delta)
+       
+        
+    print("Done generating ideals")
+    
+    return(D)
+    
+
+
+   
