@@ -1,7 +1,10 @@
 # This contains an implementation of Diaz y Diaz's original method, as well as it's natural extension to p > 3. 
   # This is described in detail in Section 3.1. 
   # In Section 4 this is referred to as "Dyd Ext". 
-  
+
+# This file serves simply to isolate the Dyd Ext algorithm. 
+# To test/ run:
+    # Save this file with a .sage extension, run in Sage v9.2, and follow prompts. 
 
 # Input
     # an odd prime p
@@ -10,8 +13,11 @@
 #Output
     # List, D, of all discriminants of quadratic number fields corresponding to pairs of triples (m1, y1, z1), 
         # (m2, y2, z2) satisfying Proposition (2.3) (b) for n=p with lower_m1 <= m1 <= upper_m1 and m1 < m2 < m1^(p/2)
+    # In particular, all discriminants output will have a p-rank of at least 2. 
 
-
+# NOTE: this code is slow, will not handle large values of upper_m1 well at all, and will struggle to produce  
+    # much for p > 3. 
+        
 def DyD_Ext(p, lower_m1, upper_m1):
     print("Running Algorithm 3.1/ DyD Ext for")
     print("p= "+str(p)+", lower_m1 = "+str(lower_m1)+", upper_m1 = "+str(upper_m1))
@@ -48,4 +54,21 @@ def DyD_Ext(p, lower_m1, upper_m1):
             t += 1
     print("Done!")
     return(list(D))
-    
+
+
+
+# The prompts below will run the function above
+print("Running Dyd Ext")
+print("  Input value for p")
+p = int(input("    p = "))
+print("  Input lower bound for m_1")
+lower_m1 = int(input("    lower bound m_1 = "))
+print("  Input upper bound for m_2")
+upper_m1 = int(input("    upper bound m_2 = "))
+print("")
+
+D = DyD_Ext(p, lower_m1, upper_m1)
+print(D)
+
+
+
