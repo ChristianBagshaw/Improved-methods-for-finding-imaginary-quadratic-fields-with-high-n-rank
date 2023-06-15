@@ -1,10 +1,11 @@
+# TO TEST/ RUN:
+    # Save this file with a .sage extension, run in Sage v9.2, and follow prompts. 
+
 # This contains an implementation of Diaz y Diaz's original method, as well as it's natural extension to p > 3. 
   # This is described in detail in Section 3.1. 
   # In Section 4 this is referred to as "Dyd Ext". 
 
 # This file serves simply to isolate the Dyd Ext algorithm. 
-# To test/ run:
-    # Save this file with a .sage extension, run in Sage v9.2, and follow prompts. 
 
 # Input
     # an odd prime p
