@@ -132,9 +132,9 @@ def Alg_3_2(p, lambdas, lower_m1, upper_m1, force_3=False):
                 for m2 in range(2, m1):
 
                     N = 4*lambda2^2*m1^p - 4*lambda1^2*m2^p
-                    if N <= 0:
+                    if N == 0:
                         continue 
-                    sqN = sqrt(N)
+                    sqN = sqrt(abs(N))
                     for a in divisors(N):
                         if a <= sqN:
                             b = N/a
@@ -146,7 +146,7 @@ def Alg_3_2(p, lambdas, lower_m1, upper_m1, force_3=False):
 
                                 # if all of the "if" statements between lines 11-22 in Algorithm 3.4 have passed, 
                                   # we now carry out line 23. 
-                                if ideal_1[0]: # checks if 
+                                if ideal_1[0]: 
                                     delta = ideal_1[1]
                                     if delta in ideals:
                                         ideals[delta].append(ideal_1[2])
@@ -204,6 +204,7 @@ def Solution_to_Ideals(p, y, m):
     t = ZZ(y^2 - 4*m^p)
     if t < 0:
         delta = t.squarefree_part()
+
         if delta % 4 != 1:
             delta = 4*delta
         if delta.divides(t):
@@ -241,7 +242,7 @@ def Solution_to_Ideals(p, y, m):
                     B = x - 2*m
                     C = (B^2 - delta)//(4*A)
 
-           
+                
                 return([True, delta, [A, B, C]])
             
     return([False])
@@ -352,4 +353,4 @@ def rankcheck(p, forms_coeffs):
 
 # as a default, this file runs 
 D = Alg_3_2(7 ,[(1, 1),(2, 1), (3,1)], 3, 64)
-print(D)
+
