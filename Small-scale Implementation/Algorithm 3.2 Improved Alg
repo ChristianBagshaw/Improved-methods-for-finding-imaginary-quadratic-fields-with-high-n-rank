@@ -351,5 +351,5 @@ def rankcheck(p, forms_coeffs):
 # disc_list_4 = Alg_3_2(5 ,[(1, 1),(2, 1), (3,1)], 3, 100, True)
 
 # as a default, this file runs 
-D = Alg_3_2(7 ,[(1, 1),(2, 1), (3,1)], 3, 100)
+D = Alg_3_2(7 ,[(1, 1),(2, 1), (3,1)], 3, 64)
 print(D)
