@@ -1,11 +1,12 @@
-# TO TEST/ RUN:
-    # Save this file with a .sage extension, run in Sage v9.2, and follow prompts. 
-
 # This contains an implementation of Diaz y Diaz's original method, as well as it's natural extension to p > 3. 
   # This is described in detail in Section 3.1. 
   # In Section 4 this is referred to as "Dyd Ext". 
 
-# This file serves simply to isolate the Dyd Ext algorithm. 
+# This file serves simply to isolate and test the Dyd Ext algorithm. 
+
+# To TEST/ RUN:
+    # View bottom of file. 
+    # Save this file with a .sage extension, run in Sage v9.2, and follow prompts. 
 
 # Input
     # an odd prime p
@@ -56,9 +57,15 @@ def DyD_Ext(p, lower_m1, upper_m1):
     print("Done!")
     return(list(D))
 
+###############################################################
+###############################################################
+###############################################################
 
+# TO RUN: 
+    # Save this file with a .sage extension, run in Sage v9.2. 
 
 # The prompts below will run the function above
+
 print("Running Dyd Ext")
 print("  Input value for p")
 p = int(input("    p = "))
