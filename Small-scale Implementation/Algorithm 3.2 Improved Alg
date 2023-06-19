@@ -331,22 +331,25 @@ def rankcheck(p, forms_coeffs):
     # with parameters as defined above. 
 # For example, 
 
-Alg_3_2(3 ,[(1, 1),(2, 1)], 3, 100)
+# Alg_3_2(3 ,[(1, 1),(2, 1)], 3, 100)
 
 # runs this with p=3, over the lambda_pairs (1,1) and (2,2), with a search with 3 <= m_1 <= 100. 
 # Although, this will not save the returned list of discriminants, so perhaps it should be run as 
 
-disc_list_1 = Alg_3_2(3 ,[(1, 1),(2, 1)], 3, 100)
+# disc_list_1 = Alg_3_2(3 ,[(1, 1),(2, 1)], 3, 100)
 
 # and then the list of discriminants can be saved/ printed as desired. 
 
 # By default, this does not perform explicit ideal independence testing for p=3, but this could be forced with 
 
-disc_list_2 = Alg_3_2(3 ,[(1, 1),(2, 1)], 3, 100, True)
+# disc_list_2 = Alg_3_2(3 ,[(1, 1),(2, 1)], 3, 100, True)
 
 # This is typically not worth the trade-off of increased runtime. 
 # Also, this flag will not affect anything if p > 3. For example, the following are identical
 
-disc_list_3 = Alg_3_2(5 ,[(1, 1),(2, 1), (3,1)], 3, 100)
-disc_list_4 = Alg_3_2(5 ,[(1, 1),(2, 1), (3,1)], 3, 100, True)
+# disc_list_3 = Alg_3_2(5 ,[(1, 1),(2, 1), (3,1)], 3, 100)
+# disc_list_4 = Alg_3_2(5 ,[(1, 1),(2, 1), (3,1)], 3, 100, True)
 
+# as a default, this file runs 
+D = Alg_3_2(7 ,[(1, 1),(2, 1), (3,1)], 3, 100)
+print(D)
