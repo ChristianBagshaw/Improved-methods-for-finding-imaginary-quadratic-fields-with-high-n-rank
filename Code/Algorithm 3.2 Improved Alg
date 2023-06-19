@@ -11,17 +11,8 @@
     
 # This file serves to isolate and simply present Algorithm 3.2, but memory will quickly become an issue if this code 
     # is run verbatim for a large computation, since a lot of data is being stored in dictionaries. 
-    # In a large computation, this data should be stored outside of memory, as demonstrated in 
-    # !!!!!!!! OTHERPATH IN REPO NEED TO FIX !!!!!!!!!
-    # !!!!!!!! OTHERPATH IN REPO NEED TO FIX !!!!!!!!!
-    # !!!!!!!! OTHERPATH IN REPO NEED TO FIX !!!!!!!!!
-    # !!!!!!!! OTHERPATH IN REPO NEED TO FIX !!!!!!!!!
-    # !!!!!!!! OTHERPATH IN REPO NEED TO FIX !!!!!!!!!
+    # In a large computation, this data should be stored outside of memory, as demonstrated in the folder "How to implement"
   
-  
-    
-
-
 
 # Input
     # An odd prime: "p"
