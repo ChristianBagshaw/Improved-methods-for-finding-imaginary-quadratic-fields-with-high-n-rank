@@ -1,5 +1,11 @@
 # Factoring Sieve as in Algorithm 3.1
 
+# This file simply serves to isolate the factoring sieve algorithm. 
+
+# To TEST/ RUN:
+    # View bottom of file. 
+    # Save file with a .sage extension, and run in Sage v9.2. 
+
 # Input:
   # Odd prime: "p"
   # A fixed integer: "m1"
@@ -13,7 +19,7 @@
 
 def roots_generate(p, sieve_bound, lambda1, lambda2):
     roots = {}
-    for q in prime_range(2, roots_bound+1):
+    for q in prime_range(2, sieve_bound+1):
         Zq = Integers(q)  # Zq is the ring of integers modulo q, Z/qZ
         if not q.divides(lambda1):
             lambda1inv = inverse_mod(lambda1, q)
@@ -33,3 +39,32 @@ def Fac_Sieve(p, m1, sieve_bound, lambda1, lambda2):
               for m2 in range (xm1, m1, q):
                   factor_array[m2].append(q)
     return(factor_array)
+
+
+
+
+############################
+############################
+
+
+# TO RUN: 
+    # Save this file with a .sage extension, run in Sage v9.2. 
+
+# The prompts below will run the function above
+
+print("Running Dyd Ext")
+print("  Input value for p")
+p = int(input("    p = "))
+print("  Input m_1")
+m1 = int(input("    m_1 = "))
+print("  Input sieve bound")
+sieve_bound = int(input("    sieve bound = "))
+print("  Input lambda1")
+lambda1 = int(input("    lambda1 = "))
+print("  Input lambda2")
+lambda2 = int(input("    lambda2 = "))
+print("")
+
+A = Fac_Sieve(p, m1, sieve_bound, lambda1, lambda2)
+print(A)
+
