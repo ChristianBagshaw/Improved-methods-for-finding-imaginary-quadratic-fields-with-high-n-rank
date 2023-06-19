@@ -1,5 +1,6 @@
-# view the folders "Individual Algorithms" and "Small-scale" implementation to understand these functions more fully
-# this should be executed in sage v9.2 as part of a large scale implementation (see README in this directory)
+# view the folders "Individual Algorithms" and "Small-scale Implementation" to understand these functions more fully
+# this file should be saved with a .sage extension and executed in sage v9.2 as part of a large implementation 
+# see README in this directory
 
 import time
 from math import sqrt
