@@ -1,5 +1,7 @@
 # Algorithm 3.2 Improved Alg
 
+# Suitable for smaller computations (one node, no sieving). 
+
 # TO TEST/ RUN:
     # View bottom of file for instructions
 
