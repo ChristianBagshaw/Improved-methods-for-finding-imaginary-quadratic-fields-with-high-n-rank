@@ -92,7 +92,7 @@ def RemoveDuplicates(dict1):
 
 
 # the data needs to be read from a file, after which it can be processed by rankcheck as normal. 
-def rankcheck_fromfile(p, searchfilename, discfilename):
+def rankcheck_fromfile(p, searchfilename, discfilename, modulus, mod):
     
     discfile = open(discfilename + ".txt", 'w')
     
@@ -162,14 +162,14 @@ def rankcheck_fromfile(p, searchfilename, discfilename):
 
         forms = list(set(forms))
         
+        if (d % modulus) == mod:
+
+            rank =  rankcheck(p, forms)
 
 
-        rank =  rankcheck(p, forms)
-
-
-        if rank:
-            discfile.write("%s" % d)
-            discfile.write("%s" % "\n")
+            if rank:
+                discfile.write("%s" % d)
+                discfile.write("%s" % "\n")
         
         
     discfile.close() 
@@ -183,19 +183,31 @@ try:
 except:
     p = int(input("p =    "))
     
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
     searchfilename = raw_input("search data file name (without .txt):  ")
 else:
     searchfilename = str(sys.argv[2])
 
+if len(sys.argv) < 4:
+    modulus = 1
+    mod = 0
+else:
+    modulus = int(sys.argv[3])
+    mod = int(sys.argv[4])
+
 # searchfilename should contain the sorted ideal data
 
-discfilename = searchfilename+"_discs"
+
+if modulus != 1:    
+    discfilename = searchfilename+"_discs_"+str(modulus)+"_"+str(mod)
+else:  
+    discfilename = searchfilename+"_discs"
 
 
-timefilename_ideals = searchfilename+"_discs_time"
+
+timefilename_ideals = discfilename+"_time"
 start = time.time()
-rankcheck_fromfile(p, searchfilename, discfilename)
+rankcheck_fromfile(p, searchfilename, discfilename, modulus, mod)
 idealtime =  time.time() - start
 
 
