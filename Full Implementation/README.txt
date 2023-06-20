@@ -1,4 +1,5 @@
-This directory contains the code necessary for a large-scale implementation of Algorithm 3.2. 
+This directory contains the code necessary for a large-scale implementation of Algorithm 3.2 - WITH EXPLICIT IDEAL INDEPENDENCE TESTING FOR ALL PRIMES. 
+Thus, for the prime 3 this is not optimal, and the other directory ``Full Implementation p=3'' should be looked at for this. 
 
 If one is interested in finding fields of high p-rank, throughout the variable 'q' is used instead of 'p' in this document 
 to avoid confusion with the 'p' used in the names of files
