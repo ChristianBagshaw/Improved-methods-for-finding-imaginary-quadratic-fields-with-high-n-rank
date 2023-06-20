@@ -113,5 +113,5 @@ EXAMPLE:
           sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 8 &
           sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 9 &
           sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 10 &
-  The output files now contain a total of 31411 unique discriminants whose fields have 5-rank at least 2. 
+   
         
