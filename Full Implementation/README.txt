@@ -39,8 +39,13 @@ Throughout we suppose that Sage v9.2 can be run from the command line with the c
     (-) this could also be run directly from the command line, as 
             sage p_rank_ideal_test.sage p_searchdata_sorted
     (-) the output of this will be a .txt file
-          ``p_searchdata_sorted''
+            p_searchdata_sorted_discs.txt
         containing discriminants whose corresponding quadratic field has a p-rank of at least 2. 
+    (-) there are multiple ways to parallelize this step, but one is implemented as follows. The command 
+            sage p_rank_ideal_test.sage p_searchdata_sorted a b
+        can be run from the command line for integers a > b. This will simply mean that only discriminants congruent to b mod a will 
+        be processed. This does cause some unnecessary work (reading lines unnecessarily), but is simple and perhaps faster than 
+        sorting/ splitting the file another way. 
 
 HOW TO RUN (an explicit example is given below)
   (i) "p_rank_search" and "p_rank_ideal_test" should be saved with .sage extensions. We suppose that Sage v9.2 can be run 
@@ -52,11 +57,24 @@ HOW TO RUN (an explicit example is given below)
        If the only files in the directory of the form p_*_searchdata.txt are the ones output by the commands above, then the commands
             cat p_*_searchdata.txt > p_searchdata.txt
             sort -n -r p_searchdata.txt -o p_searchdata_sorted.txt
-        can be run from the command line to achieve this (although for a very large run, one would want to delete files once they are copied
-        and sorted, to save storage.  
-  (iv) this file can then be split however one desires before the next step, ensuring that all data corresponding to a given discriminant stays together.
-   (v) the files from the previous step, call one of them 
-               
+        can be run from the command line to achieve this (although for a very large run, one would want to delete files once they are         copied and sorted, to save storage.  
+   (v) the file from the previous step can then be called by "p_rank_ideal_test.sage" as
+            sage p_rank_ideal_test.sage p p_searchdata_sorted
+        to finish Algorithm 3.2. The output of this would be the file 
+            p_searchdata_sorted_discs.txt
+  (vi) Alternatively, one could split the final step as described above. For some integer b, the commands 
+            sage p_rank_ideal_test.sage p p_searchdata_sorted b 0
+            sage p_rank_ideal_test.sage p p_searchdata_sorted b 1
+            ....
+            sage p_rank_ideal_test.sage p p_searchdata_sorted b b-1
+        could be run with the command ending in "b a" only processing discriminants congruent to a mod b. This would output files 
+            p_searchdata_sorted_discs_b_0.txt
+            p_searchdata_sorted_discs_b_1.txt
+            ...
+            p_searchdata_sorted_discs_b_b-1.txt
+        with the file ending in "b_a.txt" containing the processed discriminants congruent to a mod b. 
+
+EXAMPLE:
         
         
         
