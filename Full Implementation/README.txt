@@ -119,6 +119,6 @@ EXAMPLE:
           sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 8 &
           sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 9 &
           sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 10 &
-  The output files now contain a total of  XXX discriminants with 5-rank at least 2. 
+  The output files now contain a total of 31411 discriminants with 5-rank at least 2. 
         
         
