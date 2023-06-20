@@ -47,3 +47,71 @@ Throughout we suppose that Sage v9.2 can be run from the command line with the c
         sorting/ splitting a very large file another way. 
     (-) similar to above, the time taken to compute the data now stored in the file X.txt will be stored in X_time.txt
 
+
+HOW TO RUN (an explicit example is given below)
+  (i) "3optimal_rank_search" and "3optimal_rank_ideal_test" should be saved with .sage extensions. We suppose that Sage v9.2 can be run from the command line with the command "sage". 
+ (ii) from all values of quadruples of (lambda1, lambda2, lower_m1, upper_m1)  which are desired to be searched over, the command 
+            sage 3optimal_rank_search.sage lambda1 lambda2 lower_m1 upper_m1 sieve_bound
+        should be run from the command line (with a desired sieve_bound). The key is that these can be run in parallel. 
+ (iii) the files output from these should be combined and sorted by the first column. This can of course also be parallelized. 
+       If the only files in the directory of the form 3optimal_*_searchdata.txt are the ones output by the commands above, then the commands
+            cat 3optimal_*_searchdata.txt > 3optimal_searchdata.txt
+            sort -n -r 3optimal_searchdata.txt -o 3optimal_searchdata_sorted.txt
+        can be run from the command line to achieve this (although for a very large run, one would want to delete files once they are         copied and sorted, to save storage, and the sorting should be parallelized). Also, to ensure that commas are not           misinterpreted, one should run the command
+             export LC_NUMERIC=C
+   (v) the file from the previous step can then be called by "3optimal_rank_ideal_test.sage" as
+            sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted
+        to finish Algorithm 3.2. The output of this would be the file 
+            3optimal_searchdata_sorted_discs.txt
+  (vi) Alternatively, one could split the final step as described above. For some integer b, the commands 
+            sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted b 0
+            sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted b 1
+            ....
+            sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted b b-1
+        could be run with the command ending in "b a" only processing discriminants congruent to a mod b. This would output files 
+            3optimal_searchdata_sorted_discs_b_0.txt
+            3optimal_searchdata_sorted_discs_b_1.txt
+            ...
+            3optimal_searchdata_sorted_discs_b_b-1.txt
+        with the file ending in "b_a.txt" containing the processed discriminants congruent to a mod b. 
+
+EXAMPLE:
+    We will conduct a search for fields with a large 3-rank
+          (-) without sieving
+          (-) over the lambda pairs (1,1)
+          (-) from lower_m1 = 512 to upper_m1 = 1023
+    We will split the search into the following computations, given by the following parameters 
+          (-) the lambda pair (1,1) and lower_m1 = 512 to upper_m1 = 575
+          (-) the lambda pair (1,1) and lower_m1 = 576 to upper_m1 = 639
+          (-) the lambda pair (1,1) and lower_m1 = 640 to upper_m1 = 703
+          (-) the lambda pair (1,1) and lower_m1 = 704 to upper_m1 = 767
+          (-) the lambda pair (1,1) and lower_m1 = 768 to upper_m1 = 831
+          (-) the lambda pair (1,1) and lower_m1 = 832 to upper_m1 = 895
+          (-) the lambda pair (1,1) and lower_m1 = 896 to upper_m1 = 959
+          (-) the lambda pair (1,1) and lower_m1 = 960 to upper_m1 = 1023
+    To do so, we firstly run the following from the command line
+          sage 3optimal_rank_search.sage 1 1 512 575 0 &
+          sage 3optimal_rank_search.sage 1 1 576 639 0 &
+          sage 3optimal_rank_search.sage 1 1 640 703 0 &
+          sage 3optimal_rank_search.sage 1 1 704 767 0 &
+          sage 3optimal_rank_search.sage 1 1 768 831 0 &
+          sage 3optimal_rank_search.sage 1 1 832 895 0 &
+          sage 3optimal_rank_search.sage 1 1 896 959 0 &
+          sage 3optimal_rank_search.sage 1 1 960 1023 0 &
+    Then we combine this into one file and sort
+          cat 3optimal_*_searchdata.txt > 3optimal_searchdata.txt
+          sort -n -r 3optimal_searchdata.txt -o 3optimal_searchdata_sorted.txt
+    We then process these and split them up modulo 11 (not 10, since discriminants have a bias mod 2) by running 
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 0 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 1 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 2 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 3 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 4 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 5 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 6 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 7 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 8 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 9 &
+          sage 3optimal_rank_ideal_test.sage 3optimal_searchdata_sorted 11 10 &
+  The output files now contain a total of 31411 unique discriminants whose fields have 5-rank at least 2. 
+        
