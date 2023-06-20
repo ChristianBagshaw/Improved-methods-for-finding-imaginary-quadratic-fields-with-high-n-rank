@@ -1,7 +1,7 @@
 This directory contains the code necessary for a large-scale implementation of Algorithm 3.2. 
 
 If one is interested in finding fields of high p-rank, throughout the variable 'q' is used instead of 'p' in this document 
-This is to avoid confusion with the 'p' used in the names of files
+to avoid confusion with the 'p' used in the names of files
 
 The only real difference between this, and the code contained within "Small-scale implementation" is 
   (-) implementation of the factoring sieve 
