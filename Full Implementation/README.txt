@@ -64,7 +64,8 @@ HOW TO RUN (an explicit example is given below)
        If the only files in the directory of the form q_*_searchdata.txt are the ones output by the commands above, then the commands
             cat q_*_searchdata.txt > q_searchdata.txt
             sort -n -r q_searchdata.txt -o q_searchdata_sorted.txt
-        can be run from the command line to achieve this (although for a very large run, one would want to delete files once they are         copied and sorted, to save storage, and the sorting should be parallelized). 
+        can be run from the command line to achieve this (although for a very large run, one would want to delete files once they are         copied and sorted, to save storage, and the sorting should be parallelized). Also, to ensure that commas are not misinterpreted, one should run the command 
+             export LC_NUMERIC=C
    (v) the file from the previous step can then be called by "p_rank_ideal_test.sage" as
             sage p_rank_ideal_test.sage q q_searchdata_sorted
         to finish Algorithm 3.2. The output of this would be the file 
