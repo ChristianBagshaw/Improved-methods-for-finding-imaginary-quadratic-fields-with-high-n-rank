@@ -31,6 +31,8 @@ Throughout we suppose that Sage v9.2 can be run from the command line with the c
           ``delta, [A, B, C]''
         where delta denotes a fundamental discriminant, and A,B,C denote the coefficients of a binary quadratic form, corresponding to
         an ideal class in Q(\sqrt(delta)) of order p. 
+    (-) additionally, the time taken for this computation will be output into the file 
+            `q'_`lambda1'_`lambda2'_`lower_m1'_`upper_m1'_searchdata_time.txt
        
  "p_rank_ideal_test"
     (-) this file carries out, essentially, lines 27-31 in Algorithm 3.2, but data is read from a file containing data output
@@ -50,6 +52,7 @@ Throughout we suppose that Sage v9.2 can be run from the command line with the c
         can be run from the command line for integers a > b. This will simply mean that only discriminants congruent to b mod a will 
         be processed. This does cause some unnecessary work (reading lines unnecessarily), but is simple and perhaps faster than 
         sorting/ splitting the file another way. 
+    (-) similar to above, the time taken to compute the data now stored in the file X.txt will be stored in X_time.txt
 
 HOW TO RUN (an explicit example is given below)
   (i) "p_rank_search" and "p_rank_ideal_test" should be saved with .sage extensions. We suppose that Sage v9.2 can be run 
@@ -83,7 +86,7 @@ EXAMPLE:
           (-) without sieving
           (-) over the lambda pairs (1,1), (2,1), (3,1), (4,1), (5,1)
           (-) from lower_m1 = 512 to upper_m1 = 639
-    We will split this up into 10 computations, given by the following parameters 
+    We will split the search into 10 computations, given by the following parameters 
           (-) the lambda pair (1,1) and lower_m1 = 512 to upper_m1 = 575
           (-) the lambda pair (1,1) and lower_m1 = 576 to upper_m1 = 639
           (-) the lambda pair (2,1) and lower_m1 = 512 to upper_m1 = 575
@@ -120,6 +123,6 @@ EXAMPLE:
           sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 8 &
           sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 9 &
           sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 10 &
-  The output files now contain a total of 31411 discriminants with 5-rank at least 2. 
+  The output files now contain a total of 31411 unique discriminants whose fields have 5-rank at least 2. 
         
         
