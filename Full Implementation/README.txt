@@ -78,7 +78,47 @@ HOW TO RUN (an explicit example is given below)
         with the file ending in "b_a.txt" containing the processed discriminants congruent to a mod b. 
 
 EXAMPLE:
-        
-        
+    We will conduct a search for fields with a large 5-rank
+          (-) without sieving
+          (-) over the lambda pairs (1,1), (2,1), (3,1), (4,1), (5,1)
+          (-) from lower_m1 = 512 to upper_m1 = 639
+    We will split this up into 10 computations, given by the following parameters 
+          (-) the lambda pair (1,1) and lower_m1 = 512 to upper_m1 = 575
+          (-) the lambda pair (1,1) and lower_m1 = 576 to upper_m1 = 639
+          (-) the lambda pair (2,1) and lower_m1 = 512 to upper_m1 = 575
+          (-) the lambda pair (2,1) and lower_m1 = 576 to upper_m1 = 639
+          (-) the lambda pair (3,1) and lower_m1 = 512 to upper_m1 = 575
+          (-) the lambda pair (3,1) and lower_m1 = 576 to upper_m1 = 639
+          (-) the lambda pair (4,1) and lower_m1 = 512 to upper_m1 = 575
+          (-) the lambda pair (4,1) and lower_m1 = 576 to upper_m1 = 639
+          (-) the lambda pair (5,1) and lower_m1 = 512 to upper_m1 = 575
+          (-) the lambda pair (5,1) and lower_m1 = 576 to upper_m1 = 639
+    To do so, we firstly run the following from the command line
+          sage p_rank_search.sage 5 1 1 512 575 0 &
+          sage p_rank_search.sage 5 2 1 512 575 0 &
+          sage p_rank_search.sage 5 3 1 512 575 0 &
+          sage p_rank_search.sage 5 4 1 512 575 0 &
+          sage p_rank_search.sage 5 5 1 512 575 0 &
+          sage p_rank_search.sage 5 1 1 576 639 0 &
+          sage p_rank_search.sage 5 2 1 576 639 0 &
+          sage p_rank_search.sage 5 3 1 576 639 0 &
+          sage p_rank_search.sage 5 4 1 576 639 0 &
+          sage p_rank_search.sage 5 5 1 576 639 0 &
+    Then we combine this into one file and sort
+          cat 5_*_searchdata.txt > 5_searchdata.txt
+          sort -n -r 5_searchdata.txt -o 5_searchdata_sorted.txt
+    We then process these and split them up modulo 11 (not 10, since discriminants have a bias mod 2) by running 
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 0 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 1 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 2 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 3 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 4 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 5 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 6 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 7 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 8 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 9 &
+          sage p_rank_ideal_test.sage 5 5_searchdata_sorted 11 10 &
+  The output files now contain a total of  XXX discriminants with 5-rank at least 2. 
         
         
