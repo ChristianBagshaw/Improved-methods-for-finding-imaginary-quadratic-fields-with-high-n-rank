@@ -52,12 +52,12 @@ HOW TO RUN (an explicit example is given below)
       from the command line with the command "sage". 
  (ii) from all values of quadruples of (lambda1, lambda2, lower_m1, upper_m1)  which are desired to be searched over, the command 
             sage p_rank_search.sage p lambda1 lambda2 lower_m1 upper_m1 sieve_bound
-        should be run from the command line (with a desired sieve_bound). The key is that these can be run in parrallel. 
- (iii) the files output from these should be combined and sorted by the first column. This can of course also be parrallelized. 
+        should be run from the command line (with a desired sieve_bound). The key is that these can be run in parallel. 
+ (iii) the files output from these should be combined and sorted by the first column. This can of course also be parallelized. 
        If the only files in the directory of the form p_*_searchdata.txt are the ones output by the commands above, then the commands
             cat p_*_searchdata.txt > p_searchdata.txt
             sort -n -r p_searchdata.txt -o p_searchdata_sorted.txt
-        can be run from the command line to achieve this (although for a very large run, one would want to delete files once they are         copied and sorted, to save storage.  
+        can be run from the command line to achieve this (although for a very large run, one would want to delete files once they are         copied and sorted, to save storage, and the sorting should be parallelized). 
    (v) the file from the previous step can then be called by "p_rank_ideal_test.sage" as
             sage p_rank_ideal_test.sage p p_searchdata_sorted
         to finish Algorithm 3.2. The output of this would be the file 
