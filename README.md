@@ -6,7 +6,7 @@ All code is written to be run in Sage v9.2 (earlier/ later versions may/ may not
 
 There are three main subdirectories, and more information about these can be found within them:
 
-  (-) Individual Algorithms - this directory contains an implementation of ``Algorithm 3.1'' and an implementation of ``Dyd Ext''.   These are not neccesarily made for any practical use (as Dyd Ext is quite slow, and Algorithm 3.1 is not very useful on its own). 
+  (-) Individual Algorithms - this directory contains an implementation of Algorithm 3.1 and an implementation of Dyd Ext.   These are not neccesarily made for any practical use (as Dyd Ext is quite slow, and Algorithm 3.1 is not very useful on its own). 
   
   (-) Small-scale Implementation - this directory contains the code needed for a smaller run of Algorithm 3.2. These computations should be suitable to be carried out on one node, and the entire Algorithm is carried out in one big step. 
   
