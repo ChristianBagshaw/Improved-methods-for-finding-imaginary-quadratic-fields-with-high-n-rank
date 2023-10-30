@@ -1,17 +1,21 @@
-## Improved methods for finding imaginary quadratic fields with high n-rank
+## Methods for Finding Imaginary Quadratic Fields with High n-Rank
 
-This repository contains the algorithms described within "Improved methods for finding imaginary quadratic fields with high n-rank". In short: for a given prime p, these can be used to find discriminants of imaginary quadratic number fields whose class groups have a subgroup isomorphic to (Z/pZ)^2. 
+This repository contains the algorithms described in the paper titled "Improved Methods for Finding Imaginary Quadratic Fields with High n-Rank," along with several related algorithms developed by others. In summary, it provides implementations of various methods for finding discriminants of imaginary quadratic number fields whose class groups have a subgroup isomorphic to (Z/pZ)^2 (for a given prime p). 
 
-A PDF of (a draft of) the paper can be viewed in this directory.
+The repository serves two main purposes:
+* For researchers and developers working on algorithms and methods for finding quadratic number fields with non-trivial p-rank, this code facilitates easy testing and comparison.
+* For those in need of examples of quadratic number fields with non-trivial p-rank, the code here allows for the rapid generation of such examples.
+A PDF of (a near-final draft of) the paper can be viewed in this directory.
 
-All code is written to be run in Sage v9.2 (earlier/ later versions may/ may not work perfectly). The main code contained within this repository are implementations of Algorithm 3.2, which is the main algorithm we used to search for quadratic fields with large p-rank. The output of these algThis repository does not contain anything regarding computing the class groups of these discriminants 
+All code is written to be run in Sage v9.2 (earlier/ later versions may/ may not work perfectly). The main code contained within this repository are implementations of Algorithm 3.2, which is the main algorithm we used to search for quadratic fields with large p-rank. 
 
-There are three main subdirectories, and more information about these can be found within them:
+Importing custom packages in Sage can sometimes be difficult, so the easiest way to use these algorithms is to 'load' the files here. This can be done by downloading the directory "p_rank_code" and running, in Sage, 
 
-* Individual Algorithms - this directory contains an implementation of Algorithm 3.1 and an implementation of Dyd Ext. These are not necessarily made for any practical use (as Dyd Ext is quite slow, and Algorithm 3.1 is not very useful on its own).
-
-* Small-scale Implementation - this directory contains the code needed for a smaller run of Algorithm 3.2. These computations should be suitable to be carried out on one node, and the entire Algorithm is carried out in one big step. 
-
-* Full Implementation - this directory contains the code needed for a full, large scale implementation of Algorithm 3.2, to conduct a large search for fields with large p-rank. The algorithm here is split into multiple parts, and data is stored into files which need to be processed throughout.
-
-As stated previously, more information about each of these directories can be found within them!
+```python 
+from os import walk
+folder = walk("p_rank_code")
+for file in folder:
+    filename = file[2][0]
+    if filename.endswith('.sage'):
+        load(filename)
+```
