@@ -1,38 +1,50 @@
-This directory contains the code necessary for a large-scale implementation of Algorithm 3.2 - WITH EXPLICIT IDEAL INDEPENDENCE TESTING FOR ALL PRIMES. 
-Thus, for the prime 3 this is not optimal, and the other directory ``Full Implementation p=3'' should be looked at for this. 
+# Large-scale Implementation
 
-If one is interested in finding fields of high p-rank, throughout the variable 'q' is used instead of 'p' in this document 
+This directory contains the code necessary for a large-scale implementation of Algorithm 3.2 with explicit ideal independence testing. 
+Thus, for the prime p=3 this is not optimal, and the other directory ``Full Implementation p=3'' should be looked at. 
+
+If one is interested in finding fields of high p-rank, in this document the variable 'q' is used instead of 'p' in this document 
 to avoid confusion with the 'p' used in the names of files
 
-The only real difference between this, and the code contained within "Small-scale implementation" is 
-  (-) implementation of the factoring sieve 
-  (-) data is not stored in memory (in dictionaries) but is written to files. this means that "manual" processing of data 
-      is required throughout, but this is detailed and explained below. 
- 
+The only real difference between this, and the code for Algorithm 3.2 contained within "p_rank_algorithms" is 
+  * an implementation of the factoring sieve
+  *  data is not stored in memory but is written to files. This means that "manual" processing of data is required throughout, but this is detailed and explained below. 
+
+Throughout we suppose that SageMath v9.2 can be run from the command line with the command "sage". 
 
 An example of how to run this is given at the bottom of this file, but the basic instructions are as follows:
 
-There are two neccesary files: "p_rank_search" and "p_rank_ideal_test" which should both be saved with .sage extensions. 
-Throughout we suppose that Sage v9.2 can be run from the command line with the command "sage". 
+There are two necessary files: "large_p_rank_search.sage" and "large_p_rank_ideal_test.sage" which should both be downloaded (this entire directory can be downloaded for simplicity). 
 
-"p_rank_search" 
-    (-) this file carries out, essentially, lines 1-26 of Algorithm 3.2, but data is stored in .txt files instead of dictionaries. 
-    (-) if executed as is, say "sage p_rank_search.sage" is executed from the command line, then the user will be prompted to 
+
+
+"large_p_rank_search.sage" 
+    * This file carries out, essentially, lines 1-26 of Algorithm 3.2, but data is stored in .txt files instead of the dictionary "ideals".
+    * If executed as is, say "sage large_p_rank_search.sage" is executed from the command line, then the user will be prompted to 
         input a value for q, lambda1, lambda2, lower_m1, upper_m1 and a sieve_bound (the largest prime to sieve over, set to 0 
         to skip sieving). 
-    (-) to run directly from the command line, one should run 
-            sage p_rank_search.sage q lambda1 lambda2 lower_m1 upper_m1 sieve_bound
-         with desired parameters. 
-    (-) the output of this will be a .txt file 
-            `q'_`lambda1'_`lambda2'_`lower_m1'_`upper_m1'_searchdata.txt
-        for example, if the command ``sage p_rank_search.sage 5 1 1 3 512 0'' was run from the command line, the output file would be
-            5_1_1_3_512_searchdata.txt
-        each line of this file is of the form 
-          ``delta, [A, B, C]''
-        where delta denotes a fundamental discriminant, and A,B,C denote the coefficients of a binary quadratic form, corresponding to
-        an ideal class in Q(\sqrt(delta)) of order p. 
-    (-) additionally, the time taken for this computation will be output into the file 
-            `q'_`lambda1'_`lambda2'_`lower_m1'_`upper_m1'_searchdata_time.txt
+    * To run directly from the command line, one should run 
+    ```console
+      sage p_rank_search.sage q lambda1 lambda2 lower_m1 upper_m1 sieve_bound
+      ```
+      with desired parameters. The output of this will be a .txt file 
+            ```console
+            q_lambda1_lambda2_lower_m1_upper_m1_searchdata.txt
+            ```
+        For example, if the command 
+        ```console
+        sage p_rank_search.sage 5 1 1 3 512 0
+        ```
+        was run from the command line, the output file would be
+        ``console
+        5_1_1_3_512_searchdata.txt
+        ```
+        each line of this file is of the form `delta, [A, B, C]' where delta denotes a fundamental discriminant, and A,B,C denote the coefficients of a binary quadratic form, corresponding to an ideal class in Q(\sqrt(delta)) of order p, which was found during the search. 
+    * Additionally, the time taken for this computation will be output into the file 
+      ```console
+            q_lambda1_lambda2_lower_m1_upper_m1_searchdata_time.txt
+            ```
+          
        
  "p_rank_ideal_test"
     (-) this file carries out, essentially, lines 27-31 in Algorithm 3.2, but data is read from a file containing data output
