@@ -16,7 +16,7 @@ There are two subdirectories contained here and these are described in more deta
 * large_scale_search: this contains a description of, and full implementation of, of the complete search method used in the paper "Improved Methods for Finding Imaginary Quadratic Fields with High n-Rank". This can be used for large-scale searches where data needs to be stored outside of memory, and where it needs to be broken up into multiple steps.
 
 ### TLDR
-For those who just want a quick implementation of Algorithm 3.2 from the paper: download the directory "p_rank_algorithms", run the following from the same directory, and then Algorithm 3.2 is available as the function "algorithm_3_2()". 
+For those who just want a quick implementation of Algorithm 3.2 from the paper: download the directory "p_rank_algorithms", run the following from the same directory, and then Algorithm 3.2 is available as the function "algorithm_3_2()". Asking Sage for help via "help(algorithm_3_2)" can get you started. 
 
 ```python 
 from os import walk
