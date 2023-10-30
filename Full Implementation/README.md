@@ -15,6 +15,11 @@ Throughout we suppose that SageMath v9.2 can be run from the command line with t
 An example of how to run this is given at the bottom of this file, but the basic instructions are as follows:
 
 There are two necessary files: "large_p_rank_search.sage" and "large_p_rank_ideal_test.sage" which should both be downloaded (this entire directory can be downloaded for simplicity). 
+The only real difference between this, and the code for Algorithm 3.2 contained within "p_rank_algorithms" is 
+  * an implementation of the factoring sieve
+  * data is not stored in memory but is written to files. This means that "manual" processing of data is required throughout, but this is detailed and explained below.
+
+
 
     * This file carries out, essentially, lines 1-26 of Algorithm 3.2, but data is stored in .txt files instead of the dictionary "ideals".
     * If executed as is, say "sage large_p_rank_search.sage" is executed from the command line, then the user will be prompted to 
