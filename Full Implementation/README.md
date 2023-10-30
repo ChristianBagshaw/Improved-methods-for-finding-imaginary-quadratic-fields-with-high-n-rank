@@ -16,32 +16,30 @@ An example of how to run this is given at the bottom of this file, but the basic
 
 There are two necessary files: "large_p_rank_search.sage" and "large_p_rank_ideal_test.sage" which should both be downloaded (this entire directory can be downloaded for simplicity). 
 
-### large_p_rank_search.sage"
+### large_p_rank_search.sage
 * This file carries out, essentially, lines 1-26 of Algorithm 3.2, but data is stored in .txt files instead of the dictionary "ideals".
-* If executed as is, say "sage large_p_rank_search.sage" is executed from the command line, then the user will be prompted to 
-        input a value for q, lambda1, lambda2, lower_m1, upper_m1 and a sieve_bound (the largest prime to sieve over, set to 0 
-        to skip sieving). 
+* If executed as is, say "sage large_p_rank_search.sage" is executed from the command line, then the user will be prompted to input a value for q, lambda1, lambda2, lower_m1, upper_m1 and a sieve_bound (the largest prime to sieve over, set to 0 to skip sieving). 
 * To run directly from the command line, one should run 
-    ```console
-      sage p_rank_search.sage q lambda1 lambda2 lower_m1 upper_m1 sieve_bound
-      ```
-      with desired parameters. The output of this will be a .txt file 
-            ```console
-            q_lambda1_lambda2_lower_m1_upper_m1_searchdata.txt
-            ```
-        For example, if the command 
-        ```console
-        sage p_rank_search.sage 5 1 1 3 512 0
-        ```
-        was run from the command line, the output file would be
-        ``console
-        5_1_1_3_512_searchdata.txt
-        ```
-        each line of this file is of the form `delta, [A, B, C]' where delta denotes a fundamental discriminant, and A,B,C denote the coefficients of a binary quadratic form, corresponding to an ideal class in Q(\sqrt(delta)) of order p, which was found during the search. 
+```console
+sage p_rank_search.sage q lambda1 lambda2 lower_m1 upper_m1 sieve_bound
+```
+with desired parameters. The output of this will be a .txt file 
+```console
+q_lambda1_lambda2_lower_m1_upper_m1_searchdata.txt
+```
+For example, if the command 
+```console
+sage p_rank_search.sage 5 1 1 3 512 0
+```
+was run from the command line, the output file would be
+``console
+5_1_1_3_512_searchdata.txt
+```
+each line of this file is of the form `delta, [A, B, C]' where delta denotes a fundamental discriminant, and A,B,C denote the coefficients of a binary quadratic form, corresponding to an ideal class in Q(\sqrt(delta)) of order p, which was found during the search. 
 * Additionally, the time taken for this computation will be output into the file 
-      ```console
-            q_lambda1_lambda2_lower_m1_upper_m1_searchdata_time.txt
-            ```
+```console
+q_lambda1_lambda2_lower_m1_upper_m1_searchdata_time.txt
+```
           
        
  "p_rank_ideal_test"
