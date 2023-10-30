@@ -13,7 +13,7 @@ Importing custom packages in Sage can sometimes be difficult, so the easiest way
 
 ```python 
 from os import walk
-folder = walk("p_rank_code")
+folder = walk("/{path to}/p_rank_code")
 for file in folder:
     filename = file[2][0]
     if filename.endswith('.sage'):
