@@ -7,19 +7,21 @@ If one is interested in finding fields of high p-rank, in this document the vari
 to avoid confusion with the 'p' used in the names of files
 
 The only real difference between this, and the code for Algorithm 3.2 contained within "p_rank_algorithms" is 
-* an implementation of the factoring sieve
-  * data is not stored in memory but is written to files. This means that "manual" processing of data is required throughout, but this is detailed and explained below. 
+* an implementation of the factoring sieve,
+* data is not stored in memory but is written to files. This means that "manual" processing of data is required throughout, but this is detailed and explained below. 
 
 Throughout we suppose that SageMath v9.2 can be run from the command line with the command "sage". 
 
 An example of how to run this is given at the bottom of this file, but the basic instructions are as follows:
 
 There are two necessary files: "large_p_rank_search.sage" and "large_p_rank_ideal_test.sage" which should both be downloaded (this entire directory can be downloaded for simplicity). 
+
+"large_p_rank_search.sage"
 * This file carries out, essentially, lines 1-26 of Algorithm 3.2, but data is stored in .txt files instead of the dictionary "ideals".
-    * If executed as is, say "sage large_p_rank_search.sage" is executed from the command line, then the user will be prompted to 
+* If executed as is, say "sage large_p_rank_search.sage" is executed from the command line, then the user will be prompted to 
         input a value for q, lambda1, lambda2, lower_m1, upper_m1 and a sieve_bound (the largest prime to sieve over, set to 0 
         to skip sieving). 
-    * To run directly from the command line, one should run 
+* To run directly from the command line, one should run 
     ```console
       sage p_rank_search.sage q lambda1 lambda2 lower_m1 upper_m1 sieve_bound
       ```
@@ -36,7 +38,7 @@ There are two necessary files: "large_p_rank_search.sage" and "large_p_rank_idea
         5_1_1_3_512_searchdata.txt
         ```
         each line of this file is of the form `delta, [A, B, C]' where delta denotes a fundamental discriminant, and A,B,C denote the coefficients of a binary quadratic form, corresponding to an ideal class in Q(\sqrt(delta)) of order p, which was found during the search. 
-    * Additionally, the time taken for this computation will be output into the file 
+* Additionally, the time taken for this computation will be output into the file 
       ```console
             q_lambda1_lambda2_lower_m1_upper_m1_searchdata_time.txt
             ```
