@@ -1,14 +1,3 @@
-```console
-
-thecodebuzz@DESKTOP-NUEMRRD:~$ sudo service redis-server restart
-Stopping redis-server: redis-server.
-Starting redis-server: redis-server.
-
-
-
-```
-
-
 This directory contains the code necessary for a large-scale implementation of Algorithm 3.2 - WITH EXPLICIT IDEAL INDEPENDENCE TESTING FOR ALL PRIMES. 
 Thus, for the prime 3 this is not optimal, and the other directory ``Full Implementation p=3'' should be looked at for this. 
 
@@ -112,6 +101,16 @@ EXAMPLE:
           
     To do so, we first run the following from the command line
     
+    ```console
+
+thecodebuzz@DESKTOP-NUEMRRD:~$ sudo service redis-server restart
+Stopping redis-server: redis-server.
+Starting redis-server: redis-server.
+
+
+
+```
+
     ```sh
            sage p_rank_search.sage 5 1 1 512 575 0 &
           sage p_rank_search.sage 5 2 1 512 575 0 &
