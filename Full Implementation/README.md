@@ -16,7 +16,7 @@ An example of how to run this is given at the bottom of this file, but the basic
 
 There are two necessary files: "large_p_rank_search.sage" and "large_p_rank_ideal_test.sage" which should both be downloaded (this entire directory can be downloaded for simplicity). 
 
-"large_p_rank_search.sage"
+### large_p_rank_search.sage"
 * This file carries out, essentially, lines 1-26 of Algorithm 3.2, but data is stored in .txt files instead of the dictionary "ideals".
 * If executed as is, say "sage large_p_rank_search.sage" is executed from the command line, then the user will be prompted to 
         input a value for q, lambda1, lambda2, lower_m1, upper_m1 and a sieve_bound (the largest prime to sieve over, set to 0 
