@@ -98,9 +98,10 @@ EXAMPLE:
           (-) the lambda pair (4,1) and lower_m1 = 576 to upper_m1 = 639
           (-) the lambda pair (5,1) and lower_m1 = 512 to upper_m1 = 575
           (-) the lambda pair (5,1) and lower_m1 = 576 to upper_m1 = 639
+          
     To do so, we first run the following from the command line
-    ```console
- sage p_rank_search.sage 5 1 1 512 575 0 &
+    ```sh
+           sage p_rank_search.sage 5 1 1 512 575 0 &
           sage p_rank_search.sage 5 2 1 512 575 0 &
           sage p_rank_search.sage 5 3 1 512 575 0 &
           sage p_rank_search.sage 5 4 1 512 575 0 &
@@ -111,6 +112,7 @@ EXAMPLE:
           sage p_rank_search.sage 5 4 1 576 639 0 &
           sage p_rank_search.sage 5 5 1 576 639 0 &
           ```
+
          
     Then we combine this into one file and sort
           cat 5_*_searchdata.txt > 5_searchdata.txt
