@@ -1,18 +1,20 @@
 # Large-scale Implementation
 
 This directory contains the code necessary for a large-scale implementation of Algorithm 3.2 with explicit ideal independence testing. 
-Thus, for the prime p=3 this is not optimal, and the other directory ``Full Implementation p=3'' should be looked at. 
+Thus, for the prime p=3 this is not optimal, and the other directory "Full Implementation p=3" should be looked at. 
 
-If one is interested in finding fields of high p-rank, in this document the variable 'q' is used instead of 'p' in this document 
+If one is interested in finding fields of high p-rank, in this document the variable 'q' is used instead of "p" in this document 
 to avoid confusion with the 'p' used in the names of files
 
-The only real difference between this, and the code for Algorithm 3.2 contained within 'p_rank_algorithms' is 
+The only real difference between this, and the code for Algorithm 3.2 contained within "p_rank_algorithms" is 
   * an implementation of the factoring sieve
   * data is not stored in memory but is written to files. This means that "manual" processing of data is required throughout, but this is detailed and explained below. 
 
-Throughout we suppose that SageMath v9.2 can be run from the command line with the command 'sage'. 
+Throughout we suppose that SageMath v9.2 can be run from the command line with the command "sage". 
 
 An example of how to run this is given at the bottom of this file, but the basic instructions are as follows:
+
+There are two necessary files: "large_p_rank_search.sage" and "large_p_rank_ideal_test.sage" which should both be downloaded (this entire directory can be downloaded for simplicity). 
 
     * This file carries out, essentially, lines 1-26 of Algorithm 3.2, but data is stored in .txt files instead of the dictionary "ideals".
     * If executed as is, say "sage large_p_rank_search.sage" is executed from the command line, then the user will be prompted to 
