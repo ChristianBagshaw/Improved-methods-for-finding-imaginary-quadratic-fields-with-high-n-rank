@@ -12,8 +12,10 @@ A PDF of (a near-final draft of) the paper can be viewed in this directory.
 All code is written to be run in Sage v9.2 (earlier/ later versions may/ may not work perfectly). 
 
 There are two subdirectories contained here and these are described in more detail within the directories themselves. For a quick summary:
-* p_rank_algorithms: this contains individual implementations of a number of search algorithms, including a simple implementation of Algorithm 3.2. These are described in more detail within the directory itself, and should be used for testing, comparison and small-scale searches. In short: these are suitable for searches where all data can be stored in memory. 
-* large_scale_search: this contains a description of, and full implementation of, of the complete search method used in the paper "Improved Methods for Finding Imaginary Quadratic Fields with High n-Rank". This can be used for large-scale searches where data needs to be stored outside of memory, and where it needs to be broken up into multiple steps.
+* p_rank_algorithms:
+** Contains individual implementations of a number of search algorithms, including a simple implementation of Algorithm 3.2. These are described in more detail within the directory itself, and should be used for testing, comparison and small-scale searches. In short, these are suitable for searches where all data can be stored in memory. 
+* large_scale_search
+**Contains a description of, and full implementation of, of the complete search method used in the paper "Improved Methods for Finding Imaginary Quadratic Fields with High n-Rank". This can be used for large-scale searches where data needs to be stored outside of memory, and where it needs to be broken up into multiple steps.
 
 ### TLDR
 For those who just want a quick implementation of Algorithm 3.2 from the paper: download the directory "p_rank_algorithms", run the following from directory containing "p_rank_algorithms", and then Algorithm 3.2 is available as the function "algorithm_3_2()". Asking Sage for help via "help(algorithm_3_2)" can get you started. 
