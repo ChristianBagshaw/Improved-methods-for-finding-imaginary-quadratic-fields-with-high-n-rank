@@ -9,11 +9,11 @@ A PDF of (a near-final draft of) the paper can be viewed in this directory.
 
 All code is written to be run in Sage v9.2 (earlier/ later versions may/ may not work perfectly). The main code contained within this repository are implementations of Algorithm 3.2, which is the main algorithm we used to search for quadratic fields with large p-rank. 
 
-Importing custom packages in Sage can sometimes be difficult, so the easiest way to use these algorithms is to 'load' the files here. This can be done by downloading the directory "p_rank_code" and running, in Sage, 
+Importing custom packages in Sage can sometimes be difficult, so the easiest way to use these algorithms is to 'load' the files here. This can be done by downloading the directory "p_rank_code" and running, in Sage from the directory containing "p_rank_code", 
 
 ```python 
 from os import walk
-folder = walk("/{path to}/p_rank_code")
+folder = walk("p_rank_code")
 for file in folder:
     filename = file[2][0]
     if filename.endswith('.sage'):
