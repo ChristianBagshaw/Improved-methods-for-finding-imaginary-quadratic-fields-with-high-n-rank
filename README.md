@@ -35,8 +35,8 @@ for file in folder:
         load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename[2][0])
 ```
 
-Algorithm 3.2 is now available as the function `p_rank_allsteps()`. Asking Sage for help via `help(p_rank_allsteps)` can get you started.
+Algorithm 3.2 is now available as the function `p_rank_allsteps()`. Asking Sage for help via `help(p_rank_allsteps)` can get you started. 
 
 
 ### TLDR x 2
-If that is too much - go into the directory `Individual Algorithms` and then copy `p_rank_allsteps`. 
+If that is too much - go into the directory `Individual Algorithms` and then copy `p_rank_allsteps.sage`. 
