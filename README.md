@@ -24,7 +24,7 @@ For those who want a quick implementation of Algorithm 3.2 from the paper: from 
 git clone https://github.com/ChristianBagshaw/Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank.git
 ```
 
-open SageMath, and run the following. Then Algorithm 3.2 is available as the function `p_rank_allsteps()`. Asking Sage for help via `help(p_rank_allsteps)` can get you started. 
+Then open SageMath, and run the following 
 
 ```python 
 from os import walk
@@ -35,3 +35,8 @@ for file in folder:
         load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename[2][0])
 ```
 
+Algorithm 3.2 is now available as the function `p_rank_allsteps()`. Asking Sage for help via `help(p_rank_allsteps)` can get you started.
+
+
+### TLDR x 2
+If that is too much - go into the directory `Individual Algorithms` and then copy `p_rank_allsteps`. 
