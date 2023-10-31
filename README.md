@@ -18,7 +18,7 @@ There are two subdirectories contained here and these are described in more deta
     * Contains a description of, and full implementation of, the complete search method used in the paper. This can be used for large-scale searches where data needs to be stored outside of memory, and where it needs to be broken up into multiple steps.
 
 ### TLDR
-For those who want a quick implementation of Algorithm 3.2 from the paper: from the command line on a system with git, run 
+For those who want a quick implementation of Algorithm 3.2 from the paper, importing modules and packages in Sage can be annoying, so the following may be easier: from the command line on a system with git, run 
 
 ```
 git clone https://github.com/ChristianBagshaw/Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank.git
