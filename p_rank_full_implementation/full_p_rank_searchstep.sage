@@ -1,4 +1,4 @@
-# The file small_p_rank_search.sage is a better source for understanding these functions. 
+# The file small_p_rank_allsteps.sage is a better source for understanding these functions. 
 # see README in this directory
 
 import time
