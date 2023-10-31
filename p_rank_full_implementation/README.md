@@ -115,14 +115,14 @@ There are two necessary files: `full_p_rank_searchstep.sage` and `full_p_rank_id
              
    * the lambda pair (1,1) and lower_m1 = 512 to upper_m1 = 575
    * the lambda pair (1,1) and lower_m1 = 576 to upper_m1 = 639
-    * the lambda pair (2,1) and lower_m1 = 512 to upper_m1 = 575
-    * the lambda pair (2,1) and lower_m1 = 576 to upper_m1 = 639
-    * the lambda pair (3,1) and lower_m1 = 512 to upper_m1 = 575
-    * the lambda pair (3,1) and lower_m1 = 576 to upper_m1 = 639
-    * the lambda pair (4,1) and lower_m1 = 512 to upper_m1 = 575
-    * the lambda pair (4,1) and lower_m1 = 576 to upper_m1 = 639
-    * the lambda pair (5,1) and lower_m1 = 512 to upper_m1 = 575
-    * the lambda pair (5,1) and lower_m1 = 576 to upper_m1 = 639
+   * the lambda pair (2,1) and lower_m1 = 512 to upper_m1 = 575
+   * the lambda pair (2,1) and lower_m1 = 576 to upper_m1 = 639
+   * the lambda pair (3,1) and lower_m1 = 512 to upper_m1 = 575
+   * the lambda pair (3,1) and lower_m1 = 576 to upper_m1 = 639
+   * the lambda pair (4,1) and lower_m1 = 512 to upper_m1 = 575
+   * the lambda pair (4,1) and lower_m1 = 576 to upper_m1 = 639
+   * the lambda pair (5,1) and lower_m1 = 512 to upper_m1 = 575
+   * the lambda pair (5,1) and lower_m1 = 576 to upper_m1 = 639
 
 To do so, we first run the following from the command line:
    ```
