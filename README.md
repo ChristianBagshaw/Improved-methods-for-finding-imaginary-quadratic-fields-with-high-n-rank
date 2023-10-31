@@ -18,14 +18,20 @@ There are two subdirectories contained here and these are described in more deta
     * Contains a description of, and full implementation of, the complete search method used in the paper. This can be used for large-scale searches where data needs to be stored outside of memory, and where it needs to be broken up into multiple steps.
 
 ### TLDR
-For those who want a quick implementation of Algorithm 3.2 from the paper: download this repository, run the following in Sage from within the directory containing `Individual Algorithms`, and then Algorithm 3.2 is available as the function `p_rank_allsteps()`. Asking Sage for help via `help(p_rank_allsteps)` can get you started. 
+For those who want a quick implementation of Algorithm 3.2 from the paper: from the command line on a system with git, run 
+
+```
+git clone https://github.com/ChristianBagshaw/Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank.git
+```
+
+open SageMath, and run the following. Then Algorithm 3.2 is available as the function `p_rank_allsteps()`. Asking Sage for help via `help(p_rank_allsteps)` can get you started. 
 
 ```python 
 from os import walk
-folder = walk("Individual Algorithms")
+folder = walk("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms")
 for file in folder:
     filename = file[2][0]
     if filename.endswith('.sage'):
-        load(filename)
+        load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename[2][0])
 ```
 
