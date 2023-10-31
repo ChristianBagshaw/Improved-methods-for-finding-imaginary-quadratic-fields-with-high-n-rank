@@ -7,7 +7,7 @@ import itertools
 import numpy 
   
   
-def p_rank_full_search(p, lambdas, lower_m1, upper_m1, explicit_testing_3 = False, print_progress = True):
+def p_rank_allstep(p, lambdas, lower_m1, upper_m1, explicit_testing_3 = False, print_progress = True):
 
     """
 
