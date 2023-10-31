@@ -24,7 +24,7 @@ For those who want a quick implementation of Algorithm 3.2 from the paper, impor
 git clone https://github.com/ChristianBagshaw/Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank.git
 ```
 
-Then open SageMath, and run the following 
+Then open Sage, and run the following 
 
 ```python 
 from os import walk
