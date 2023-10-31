@@ -18,7 +18,7 @@ There are two subdirectories contained here and these are described in more deta
     * Contains a description of, and full implementation of, the complete search method used in the paper. This can be used for large-scale searches where data needs to be stored outside of memory, and where it needs to be broken up into multiple steps.
 
 ### TLDR
-For those who just want a quick implementation of Algorithm 3.2 from the paper: download this repository, run the following in Sage from within the directory, and then Algorithm 3.2 is available as the function "p_rank_allsteps()". Asking Sage for help via "help(p_rank_allsteps)" can get you started. 
+For those who just want a quick implementation of Algorithm 3.2 from the paper: download this repository, run the following in Sage from within the directory, and then Algorithm 3.2 is available as the function `p_rank_allsteps()'. Asking Sage for help via `help(p_rank_allsteps)' can get you started. 
 
 ```python 
 from os import walk
