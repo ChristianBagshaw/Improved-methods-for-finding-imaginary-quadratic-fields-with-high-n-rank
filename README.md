@@ -37,6 +37,4 @@ for file in folder:
 
 Algorithm 3.2 is now available as the function `p_rank_allsteps()`. Asking Sage for help via `help(p_rank_allsteps)` can get you started. 
 
-
-### TLDR x 2
-If that is too much - go into the directory `Individual Algorithms` and then copy `p_rank_allsteps.sage`. 
+If that is too much - the file you want is in `Individual Algorithms` called `p_rank_allsteps.sage`. 
