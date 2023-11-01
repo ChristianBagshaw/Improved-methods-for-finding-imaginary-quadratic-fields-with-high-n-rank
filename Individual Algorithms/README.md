@@ -20,3 +20,8 @@ Importing modules and packages in Sage can be annoying at times, so the simplest
         if filename.endswith('.sage'):
             load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename[2][0])
     ```
+
+The function names (and descriptions of what they are implementations of and where to find them) are as follows:
+
+## p_rank_allsteps(
+
