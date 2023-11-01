@@ -29,7 +29,7 @@ This function runs a full implementation of Algorithm 3.2 from the paper, and is
 
 First, we fix an odd prime $p$, which is the first input for the function. The initial goal is to generate many integer solutions to the equation 
 $$4m^p = y^2 - z^2\Delta, $$
-where $\Delta$ is a fundamental discriminant, that satisfy Proposition 2.3(a) from the paper.  Additionally for each value of $\Delta$ we want multiple unique solutions corresponding to it. To do this, we input a list of integer tuples $[(\lambda_{1,i}, \lambda_{2,i})]$ , a value $\texttt{lower}\_ m_1$ and a value of $\texttt{upper}\_m_1$. For each pair $(m_1, m_2)$ with $\texttt{lower}\_m_1 \leq m_2 < m_1 \leq \texttt{upper}\_m_1$,  and each pair $(\lambda_{1,i}, \lambda_{2,i})$, the function generates many integer solutions $(y_1, y_2, z, \Delta)$ to the simultaneous system 
+where $\Delta$ is a fundamental discriminant, that satisfy Proposition 2.3(a) from the paper.  Additionally for each value of $\Delta$ we want multiple unique solutions corresponding to it. To do this, we input a list of integer tuples $[(\lambda_{1,i}, \lambda_{2,i})]$ , a value $\texttt{lower}{\_}m_1$ and a value of $\texttt{upper}{\_}m_1$. For each pair $(m_1, m_2)$ with $\texttt{lower}{\_}m_1 \leq m_2 < m_1 \leq \texttt{upper}{\_}m_1$,  and each pair $(\lambda_{1,i}, \lambda_{2,i})$, the function generates many integer solutions $(y_1, y_2, z, \Delta)$ to the simultaneous system 
 $$4m_1^p = y_1^2 - \lambda_{1,i}^2z^2\Delta\\ 
  4m_2^p = y_2^2 - \lambda_{2,i}^2z^2\Delta.$$
 and we only keep those individual solutions that satisfy Proposition 2.3(a).  
