@@ -6,17 +6,17 @@ Importing modules and packages in Sage can be annoying at times, so the simplest
 1. Download the files contained here, and to load a file `x.txt` simply run in Sage, `load('x.txt')`.
 2. To load them all simultaneously, from the command line on a system with git, run 
 
-```
-git clone https://github.com/ChristianBagshaw/Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank.git
-```
+    ```
+    git clone https://github.com/ChristianBagshaw/Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank.git
+    ```
 
-Then open Sage, and run the following 
+    Then open Sage, and run the following 
 
-```python 
-from os import walk
-folder = walk("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms")
-for file in folder:
-    filename = file[2][0]
-    if filename.endswith('.sage'):
-        load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename[2][0])
-```
+    ```python 
+    from os import walk
+    folder = walk("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms")
+    for file in folder:
+        filename = file[2][0]
+        if filename.endswith('.sage'):
+            load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename[2][0])
+    ```
