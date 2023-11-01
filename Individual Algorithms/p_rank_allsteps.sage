@@ -7,7 +7,7 @@ import itertools
 import numpy 
   
   
-def p_rank_allsteps(p, lambdas, lower_m1, upper_m1, explicit_testing_3 = False, print_progress = True):
+def p_rank_allsteps(p, lambda_pairs, lower_m1, upper_m1, explicit_testing_3 = False, print_progress = True):
 
     """
 
@@ -34,12 +34,12 @@ def p_rank_allsteps(p, lambdas, lower_m1, upper_m1, explicit_testing_3 = False, 
     """
 
     print("Running Algorithm 3.2 for")
-    print("p="+str(p)+", lambdas = "+str(lambdas)+", lower_m1 = "+str(lower_m1)+", upper_m1 = "+str(upper_m1))
+    print("p="+str(p)+", lambda_pairs = "+str(lambda_pairs)+", lower_m1 = "+str(lower_m1)+", upper_m1 = "+str(upper_m1))
     if p ==3 and not explicit_testing_3: 
         progress(print_progress, "  Searching for solutions/ generating ideals...")
         ideals = {}
 
-        for (lambda1, lambda2) in lambdas:
+        for (lambda1, lambda2) in lambda_pairs:
             for m1 in range(lower_m1, upper_m1 + 1):
                 N1 = 4*lambda2^2*m1^3
                 
@@ -97,7 +97,7 @@ def p_rank_allsteps(p, lambdas, lower_m1, upper_m1, explicit_testing_3 = False, 
         progress(print_progress, "  Searching for solutions/ generating ideals...")
         ideals = {}
     
-        for (lambda1, lambda2) in lambdas:
+        for (lambda1, lambda2) in lambda_pairs:
             for m1 in range(lower_m1, upper_m1 + 1):
                 N1 = 4*lambda2^2*m1^p
                 for m2 in range(2, m1):
@@ -328,5 +328,3 @@ def rankcheck(p, forms_coeffs):
 
     # return False if the forms do not generate a large enough subgroup.       
     return(False)
-
-
