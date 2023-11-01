@@ -43,7 +43,7 @@ When $p > 3$, the function always uses Theorem 2.4 to test for this. We can use 
 The output of the function will be a list of discriminants, such that for each discriminant $\Delta$ the ideal class group of $\mathbb{Q}(\sqrt{\Delta})$ has a $p$-rank of at least 2. 
 
 ### Example
-We will run this with parameters `p=5`, `lambda_pairs=[(1,1), (1,2)]`, `lower_m1=3` and upper_m1=1024`. We will save the output to a list `D`. In Sage, this is run simply via the command 
+We will run this with parameters `p=5`, `lambda_pairs=[(1,1), (1,2)]`, `lower_m1=3` and `upper_m1=1024`. We will save the output to a list `D`. In Sage, this is run simply via the command 
 ```python
 D = p_rank_allsteps(3, [(1,1), (1,2)], 3, 1024)
 ```
