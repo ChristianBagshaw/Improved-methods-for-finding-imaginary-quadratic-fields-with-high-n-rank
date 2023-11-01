@@ -61,4 +61,28 @@ This computation took approximately 9 minutes. `D` now contains 202727 discrimin
 [-3299, -3896, -4027, -5703, -6583, -8751, -9748, -10015, -11651, -12067,...
 ```
 
+## dyd_ext()
 
+....
+### Example
+We will run `dyd_ext` with parameters $p=3$, $\texttt{lower}\textunderscore m_1 = 15$ and $\texttt{upper}\textunderscore m_1 = 20$. We will save the output to a list `D`. In Sage, this is run simply via the command 
+```python
+D = dyd_ext(3, 15, 20)
+```
+While running, it outputs the following as updates (it outputs more regular updates than `p_rank_allsteps`, because it is much slower)
+```
+Running DyD Ext for
+p= 3, lower_m1 = 15, upper_m1 = 20
+   Status on m1:
+     m1 = 15
+     m1 = 16
+     m1 = 17
+     m1 = 18
+     m1 = 19
+     m1 = 20
+Done!
+```
+This computation took approximately 30 seconds. `D` now contains 16 discriminants of 3-rank at least 2: 
+```
+[-3299, -3896, -4027, -6583, -11651, -16627, -17399, -19427, -19651, -19679, -27355, -28031, -28279, -31271, -31639, -31999]
+```
