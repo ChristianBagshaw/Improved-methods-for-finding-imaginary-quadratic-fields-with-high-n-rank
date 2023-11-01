@@ -16,7 +16,7 @@ An example of how to run this is given at the bottom of this file, but we first 
 
 There are two necessary files: `full_p_rank_searchstep.sage` and `full_p_rank_idealstep.sage` which should both be downloaded (this entire directory can be downloaded for simplicity). First, we describe what each does:
 
-### `full_p_rank_searchstep.sage`
+### full_p_rank_searchstep.sage
  * This file carries out, essentially, lines 1-26 of Algorithm 3.2, but data is stored in .txt files instead of a dictionary.
  * If executed as is, say 
     ```
