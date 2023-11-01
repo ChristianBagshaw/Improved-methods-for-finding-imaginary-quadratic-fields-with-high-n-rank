@@ -28,9 +28,8 @@ Then open Sage, and run the following
 
 ```python 
 from os import walk
-folder = walk("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms")
-for file in folder:
-    filename = file[2][0]
+folder = next(walk("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms"))
+for filename in folder[2]:
     if filename.endswith('.sage'):
         load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename)
 ```
