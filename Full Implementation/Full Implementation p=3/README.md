@@ -112,18 +112,18 @@ There are two necessary files: `full_3_rank_searchstep.sage` and `full_3_rank_id
              
    * the lambda pair (1,1) and lower_m1 = 1025 to upper_m1 = 1536
    * the lambda pair (1,1) and lower_m1 = 1537 to upper_m1 = 2048
-   * the lambda pair (1,2) and lower_m1 = 1025 to upper_m1 = 1536
-   * the lambda pair (1,2) and lower_m1 = 157 to upper_m1 = 2048
+   * the lambda pair (2,1) and lower_m1 = 1025 to upper_m1 = 1536
+   * the lambda pair (2,1) and lower_m1 = 157 to upper_m1 = 2048
 
 To do so, we first run the following from the command line:
    ```
     sage full_3_rank_searchstep.sage 1 1 1025 1536 0 &
     sage full_3_rank_searchstep.sage 1 1 1537 2048 0 &
-    sage full_3_rank_searchstep.sage 1 2 1025 1536 0 &
-    sage full_3_rank_searchstep.sage 1 2 1537 2048 0 &
+    sage full_3_rank_searchstep.sage 2 1 1025 1536 0 &
+    sage full_3_rank_searchstep.sage 2 1 1537 2048 0 &
    ``` 
 
- Once these jobs have completed, we combine the output into one file and sort
+ Once these jobs have been completed, we combine the output into one file and sort
      
     cat 3optimal_*_searchdata.txt > 3optimal_searchdata.txt
     sort -n -r 3optimal_searchdata.txt -o 3optimal_searchdata_sorted.txt
