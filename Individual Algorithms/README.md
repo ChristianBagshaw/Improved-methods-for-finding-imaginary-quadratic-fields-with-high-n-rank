@@ -24,7 +24,7 @@ Importing modules and packages in Sage can be annoying at times, so the simplest
 The function names (and descriptions of what they are implementations of and where to find them) are as follows:
 
 ## p_rank_allsteps()
-This function runs a full implementation of Algorithm 3.2 from the paper, and is found in `p_rank_allsteps.sage`.  This is definitively the most successful and efficient algorithm for generating fields with $p$-rank at least 2, and should be used if one is interested in quickly generating examples. This will run the entire algorithm on one node, in one computation. Thus, it is suitable for smaller computations, where all data can be stored in dictionaries. The best source for understanding this would be to read the paper, or one can ask Sage for help via `help(p_rank_allsteps)`. First, we will give a sketch of what the function does, and then give an example of using it. 
+This function runs a full implementation of Algorithm 3.2 from the paper, and is found in the file `p_rank_allsteps.sage`.  This is definitively the most successful and efficient algorithm for generating fields with $p$-rank at least 2, and should be used if one is interested in quickly generating examples. This will run the entire algorithm on one node, in one computation. Thus, it is suitable for smaller computations, where all data can be stored in dictionaries. The best source for understanding this would be to read the paper, or one can ask Sage for help via `help(p_rank_allsteps)`. First, we will give a sketch of what the function does, and then give an example of using it. 
 
 First, we fix an odd prime $p$, which is the first input for the function. The initial goal is to generate many integer solutions to the equation 
 $$4m^p = y^2 - z^2\Delta, $$
