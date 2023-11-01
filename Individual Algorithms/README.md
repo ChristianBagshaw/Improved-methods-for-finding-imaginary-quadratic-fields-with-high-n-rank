@@ -29,21 +29,21 @@ This function runs a full implementation of Algorithm 3.2 from the paper, and is
 
 First, we fix an odd prime $p$, which is the first input for the function. The initial goal is to generate many integer solutions to the equation 
 $$4m^p = y^2 - z^2\Delta, $$
-where $\Delta$ is a fundamental discriminant, that satisfy Proposition 2.3(a) from the paper.  Additionally for each value of $\Delta$ we want multiple unique solutions corresponding to it. To do this, we input a list of integer tuples $[(\lambda_{1,i}, \lambda_{2,i})]$ , a value $\texttt{lower}\textunderscore m_1$ and a value of $\texttt{upper}\textunderscore m_1$. For each pair $(m_1, m_2)$ with $\texttt{lower}{\_}m_1 \leq m_2 < m_1 \leq \texttt{upper}{\_}m_1$,  and each pair $(\lambda_{1,i}, \lambda_{2,i})$, the function generates many integer solutions $(y_1, y_2, z, \Delta)$ to the simultaneous system 
+where $\Delta$ is a fundamental discriminant, that satisfy Proposition 2.3(a) from the paper.  Additionally for each value of $\Delta$ we want multiple unique solutions corresponding to it. To do this, we input a list of integer tuples $[(\lambda_{1,i}, \lambda_{2,i})]$ , a value $\texttt{lower}\textunderscore m_1$ and a value of $\texttt{upper}\textunderscore m_1$. For each pair $(m_1, m_2)$ with $\texttt{lower}\textunderscore m_1 \leq m_2 < m_1 \leq \texttt{upper}\textunderscore m_1$,  and each pair $(\lambda_{1,i}, \lambda_{2,i})$, the function generates many integer solutions $(y_1, y_2, z, \Delta)$ to the simultaneous system 
 $$4m_1^p = y_1^2 - \lambda_{1,i}^2z^2\Delta\\ 
  4m_2^p = y_2^2 - \lambda_{2,i}^2z^2\Delta.$$
 and we only keep those individual solutions that satisfy Proposition 2.3(a).  
 
-After this step, we group together all tuples $(m,y, z\lambda)$ that correspond to  a given $\Delta$. By Proposition 2.3(a), each solution will correspond to an ideal class in the class group of $\mathbb{Q}(\sqrt{\Delta})$ of order $p$.  We can then either use Proposition 2.3(b) or Theorem 2.4 to output each $\Delta$ whose corresponding solutions generate a subgroup isomorphic to $(\mathbb{Z}/p\mathbb{Z})^k$ for some $k \geq 2$
+After this step, we group all tuples $(m,y, z\lambda)$ that correspond to  a given $\Delta$. By Proposition 2.3(a), each solution will correspond to an ideal class in the class group of $\mathbb{Q}(\sqrt{\Delta})$ of order $p$.  We can then either use Proposition 2.3(b) or Theorem 2.4 to output each $\Delta$ whose corresponding solutions generate a subgroup isomorphic to $(\mathbb{Z}/p\mathbb{Z})^k$ for some $k \geq 2$
 
 When $p=3$, by default Proposition 2.3(b) is used. 
 
-When $p > 3$, the function always uses Theorem 2.4 to test for this. To do so, we can use Theorem 2.4 obtain an explicit $\mathbb{Z}$-basis for each ideal class, and we can use Sage's built in `BinaryQF` package to perform arithmetic with them. For $p=3$ this is not optimal, but can be forced by setting `explicit_testing_3=True` in the function input. 
+When $p > 3$, the function always uses Theorem 2.4 to test for this. We can use Theorem 2.4 to obtain an explicit $\mathbb{Z}$-basis for each ideal class, and we can use Sage's built-in `BinaryQF` package to perform arithmetic with them. For $p=3$ this is not optimal, but can be forced by setting `explicit_testing_3=True` in the function input. 
 
-The output of the function will be a list of discriminants $\Delta$, such that the ideal class group of $\mathbb{Q}(\sqrt{\Delta})$ has a $p$-rank of at least 2. 
+The output of the function will be a list of discriminants, such that for each discriminant $\Delta$ the ideal class group of $\mathbb{Q}(\sqrt{\Delta})$ has a $p$-rank of at least 2. 
 
 ### Example
-We will run Algorithm 3.2 with parameters $p=5$, $\texttt{lambda}\_\texttt{pairs} = [(1,1), (1,2)]$, $\texttt{lower}\_m_1 = 3$ and $\texttt{upper}\_m_1 = 128$. We will save the output to a list `D`. In Sage, this is run simply via the command 
+We will run Algorithm 3.2 with parameters $p=5$, $\texttt{lambda}\textunderscore\texttt{pairs} = [(1,1), (1,2)]$, $\texttt{lower}\textunderscore m_1 = 3$ and $\texttt{upper}\textunderscore m_1 = 128$. We will save the output to a list `D`. In Sage, this is run simply via the command 
 ```
 D = p_rank_allsteps(3, [(1,1), (1,2)], 3, 128)
 ```
