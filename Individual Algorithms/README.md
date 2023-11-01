@@ -44,7 +44,7 @@ The output of the function will be a list of discriminants, such that for each d
 
 ### Example
 We will run Algorithm 3.2 with parameters $p=5$, $\texttt{lambda}\textunderscore\texttt{pairs} = [(1,1), (1,2)]$, $\texttt{lower}\textunderscore m_1 = 3$ and $\texttt{upper}\textunderscore m_1 = 128$. We will save the output to a list `D`. In Sage, this is run simply via the command 
-```
+```python
 D = p_rank_allsteps(3, [(1,1), (1,2)], 3, 128)
 ```
 While running, it outputs the following as updates (these can be disabled by setting `print_progress=False` in the function input)
