@@ -2,7 +2,7 @@
 
 # Full Implementation
 
-This directory contains the code necessary for a large-scale, full implementation of Algorithm 3.2 with explicit ideal independence testing. Thus, for the prime p=3 this is not completely, and the directory  `Full Implementation p=3` should be looked at. But, this implementation will still work incredibly well for p=3. An example of how to run this implementation is given at the bottom of this file, with an example. 
+This directory contains the code necessary for a large-scale, full implementation of Algorithm 3.2 with explicit ideal independence testing. Thus, for the prime p=3 this is not optimal, and the directory `Full Implementation p=3` should be looked at. But, this implementation will still work incredibly well for p=3. An example of how to run this implementation is given at the bottom of this file, with an example. 
 
 When discussing finding fields of high p-rank, this document the variable "q" is used instead of "p" to avoid confusion with the "p" used in the names of files.
 
