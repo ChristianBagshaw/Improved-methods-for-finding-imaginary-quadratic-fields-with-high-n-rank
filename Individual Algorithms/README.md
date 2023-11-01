@@ -67,6 +67,7 @@ This is an implementation of Diaz Y Diaz's original search method (as well as it
 
 It can be considered an older variant of `p_rank_allsteps`, with a slightly different way of searching for solutions. But the main difference is as follows: if one reads the description of `p_rank_allsteps` above, after solutions are found we must process these solutions. `p_rank_allsteps` applies Theorem 2.4, while `dyd_ext` applies Proposition 2.3(b). 
 
+This is only meant to serve as an implementation for testing and is very sub-optimal when compared with `p_rank_allsteps`, especially for $p > 3$. 
 ### Example
 We will run `dyd_ext` with parameters `p=3`, `lower_m1 = 15` and `upper_m1 = 20`. We will save the output to a list `D`. In Sage, this is run simply via the command 
 ```python
