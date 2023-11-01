@@ -63,8 +63,10 @@ This computation took approximately 9 minutes. `D` now contains 202727 discrimin
 ```
 
 ## dyd_ext()
+This is an implementation of Diaz Y Diaz's original search method (as well as its natural extension to $p > 3$) as described in Section 3.1 of the paper. It is found in the file `dyd_ext.sage`. Section 3.1 is the best source for understanding this function, as well as asking Sage for help via `help(dyd_ext)`. 
 
-....
+It can be considered an older variant of `p_rank_allsteps`, with a slightly different way of searching for solutions. But the main difference is as follows: if one reads the description of `p_rank_allsteps` above, it describes how we deal with solutions once they are found. `p_rank_allsteps` applies Theorem 2.4, while `dyd_ext` applies Proposition 2.3(b). 
+
 ### Example
 We will run `dyd_ext` with parameters $p=3$, $\texttt{lower}\textunderscore m_1 = 15$ and $\texttt{upper}\textunderscore m_1 = 20$. We will save the output to a list `D`. In Sage, this is run simply via the command 
 ```python
