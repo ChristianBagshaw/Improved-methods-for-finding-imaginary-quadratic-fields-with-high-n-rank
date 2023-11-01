@@ -76,14 +76,15 @@ While running, it outputs the following as updates (it outputs more regular upda
 ```
 Running DyD Ext for
 p= 3, lower_m1 = 15, upper_m1 = 20
-   Status on m1:
+   status on m1:
      m1 = 15
      m1 = 16
      m1 = 17
      m1 = 18
      m1 = 19
      m1 = 20
-Done!
+   Done!
+Returning 16 discriminants with 3-rank > 1
 ```
 This computation took approximately 30 seconds. `D` now contains 16 discriminants of 3-rank at least 2: 
 ```
