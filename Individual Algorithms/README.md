@@ -16,8 +16,7 @@ Importing modules and packages in Sage can be annoying at times, so the simplest
     ```python 
     from os import walk
     folder = walk("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms")
-    for file in folder:
-        filename = file[2][0]
+    for filename in folder[2]:
         if filename.endswith('.sage'):
             load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename)
     ```
