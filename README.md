@@ -1,7 +1,7 @@
 
 # Methods for Finding Imaginary Quadratic Fields with High n-Rank
 
-This repository contains the algorithms described in the paper titled "Improved Methods for Finding Imaginary Quadratic Fields with High n-Rank", along with several related algorithms developed by others. These are all implementations of various methods for finding discriminants of imaginary quadratic number fields whose class groups have a subgroup isomorphic to $(\mathbb{Z}/p\mathbb{Z})^2$ (for a given prime p). 
+This repository contains the algorithms described in the paper titled "Improved Methods for Finding Imaginary Quadratic Fields with High n-Rank", along with several related algorithms developed by others. These are all implementations of various methods for finding discriminants of imaginary quadratic number fields whose class groups have a subgroup isomorphic to $(\mathbb{Z}/p\mathbb{Z})^2$ (for a given prime $p$). 
 
 A PDF of (a near-final draft of) the paper can be viewed in this directory. The main implementation contained here is Algorithm 3.2 from the paper. 
 
