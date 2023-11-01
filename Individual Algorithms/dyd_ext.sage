@@ -17,7 +17,7 @@ def dyd_ext(p, lower_m1, upper_m1):
     """
     print("Running DyD Ext for")
     print("p= "+str(p)+", lower_m1 = "+str(lower_m1)+", upper_m1 = "+str(upper_m1))
-    print("   Status on m1:")
+    print("   status on m1:")
     D = set() 
     for m1 in range(lower_m1, upper_m1 + 1):
         print("     m1 = "+str(m1))
@@ -48,7 +48,8 @@ def dyd_ext(p, lower_m1, upper_m1):
                                                 D.add(delta)
                                                 
             t += 1
-    print("Done!")
+    print("   Done!")
+    print("Returning "+str(len(D))+" discriminants with "+str(p)+"-rank > 1")
     return(sorted(list(D), reverse = True))
 
 
