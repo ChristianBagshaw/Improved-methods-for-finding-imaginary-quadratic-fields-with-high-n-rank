@@ -43,21 +43,21 @@ When $p > 3$, the function always uses Theorem 2.4 to test for this. We can use 
 The output of the function will be a list of discriminants, such that for each discriminant $\Delta$ the ideal class group of $\mathbb{Q}(\sqrt{\Delta})$ has a $p$-rank of at least 2. 
 
 ### Example
-We will run Algorithm 3.2 with parameters $p=5$, $\texttt{lambda}\textunderscore\texttt{pairs} = [(1,1), (1,2)]$, $\texttt{lower}\textunderscore m_1 = 3$ and $\texttt{upper}\textunderscore m_1 = 128$. We will save the output to a list `D`. In Sage, this is run simply via the command 
+We will run Algorithm 3.2 with parameters $p=5$, $\texttt{lambda}\textunderscore\texttt{pairs} = [(1,1), (1,2)]$, $\texttt{lower}\textunderscore m_1 = 3$ and $\texttt{upper}\textunderscore m_1 = 1024$. We will save the output to a list `D`. In Sage, this is run simply via the command 
 ```python
-D = p_rank_allsteps(3, [(1,1), (1,2)], 3, 128)
+D = p_rank_allsteps(3, [(1,1), (1,2)], 3, 1024)
 ```
 While running, it outputs the following as updates (these can be disabled by setting `print_progress=False` in the function input)
 ```
 Running Algorithm 3.2 for
-p=3, lambdas = [(1, 1), (1, 2)], lower_m1 = 3, upper_m1 = 128
-Searching for solutions/ generating ideals...
-   Done!
-Checking number of ideals found...
-   Done!
-Returning 1344 discriminants with 3-rank > 1
+p=3, lambdas = [(1, 1), (1, 2)], lower_m1 = 3, upper_m1 = 1024
+  Searching for solutions/ generating ideals...
+    Done!
+  Checking number of ideals found...
+    Done!
+  Returning 202727 discriminants with 3-rank > 1
 ```
-`D` now contains many discriminants of 3-rank at least 2: 
+This computation took approximately 9 minutes. `D` now contains 202727 discriminants of 3-rank at least 2: 
 ```
 [-3299, -3896, -4027, -5703, -6583, -8751, -9748, -10015, -11651, -12067,...
 ```
