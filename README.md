@@ -32,7 +32,7 @@ folder = walk("Improved-methods-for-finding-imaginary-quadratic-fields-with-high
 for file in folder:
     filename = file[2][0]
     if filename.endswith('.sage'):
-        load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename[2][0])
+        load("Improved-methods-for-finding-imaginary-quadratic-fields-with-high-n-rank/Individual Algorithms/"+filename)
 ```
 
 Algorithm 3.2 is now available as the function `p_rank_allsteps()`. Asking Sage for help via `help(p_rank_allsteps)` can get you started. 
