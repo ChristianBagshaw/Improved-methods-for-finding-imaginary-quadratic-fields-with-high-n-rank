@@ -24,8 +24,9 @@ Importing modules and packages in Sage can be annoying at times, so the simplest
 The function names (and descriptions of what they are implementations of and where to find them) are as follows:
 
 ## p_rank_allsteps()
-This function runs a full implementation of Algorithm 3.2 from the paper, and is found in `p_rank_allsteps.sage`.  This is definitively the most successful and efficient algorithm for generating fields with p-rank at least 2, and should be used if one is interested in quickly generating examples. This will run the entire algorithm on one node, in one computation. Thus, it is suitable for smaller computations, where all data can be stored in dictionaries. The best source for understanding this would be to read the paper, or one can ask Sage for help via `help(p_rank_allsteps)`. 
+This function runs a full implementation of Algorithm 3.2 from the paper, and is found in `p_rank_allsteps.sage`.  This is definitively the most successful and efficient algorithm for generating fields with $p$-rank at least 2, and should be used if one is interested in quickly generating examples. This will run the entire algorithm on one node, in one computation. Thus, it is suitable for smaller computations, where all data can be stored in dictionaries. The best source for understanding this would be to read the paper, or one can ask Sage for help via `help(p_rank_allsteps)`. First, we will give a sketch of what the function does, and then give an example of using it. 
 
+This function takes as input an odd prime $p$, a list of integer tuples $[(\lambda_{1,i}, \lambda_{2,i})]$ and a value $\texttt{lower\_}m$
 
 
 The function will take as input an odd prime p, a list of integer tuples [(lambda1, lambda2), ...], a value for lower\_m1 and a value for upper\_m1, and run the entirety of Algorithm 3.2 on these parameters. 
