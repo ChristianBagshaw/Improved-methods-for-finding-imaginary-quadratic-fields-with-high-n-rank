@@ -93,4 +93,4 @@ This computation took approximately 30 seconds. `D` now contains 16 discriminant
 ```
 
 
-## mestre_curve_()
+## mestre_curve()
