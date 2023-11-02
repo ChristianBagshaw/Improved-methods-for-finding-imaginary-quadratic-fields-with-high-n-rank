@@ -13,7 +13,7 @@ All code is written to be run in Sage v9.2 (earlier/ later versions of Sage/Pyth
 
 There are two subdirectories contained here and these are described in more detail within the directories themselves. For a quick summary:
 * Individual Algorithms:
-    * Contains individual implementations of several search algorithms, including all-in-one ready-to-go implementation of Algorithm 3.2. These are suitable for testing, comparison and small-scale, rapid generation of examples (small enough such that all data can be stored in memory). 
+    * Contains individual implementations of several search algorithms, including an easy-to-use, all-in-one, ready-to-go implementation of Algorithm 3.2. These are suitable for testing, comparison and small-scale, rapid generation of examples (small enough such that all data can be stored in memory). 
 * Full Implementation
     * Contains a description of, and full implementation of, the complete search method used in the paper. This can be used for large-scale searches where data needs to be stored outside of memory, and where it needs to be broken up into multiple steps. This requires slightly more work on the part of the user, but should still be easy to use.  
 
