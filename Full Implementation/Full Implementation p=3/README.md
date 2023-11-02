@@ -135,6 +135,6 @@ We then process these and split them up modulo 11 (not 10, since discriminants h
     sage full_3_rank_idealstep.sage 3optimal_searchdata_sorted 5 3 &
     sage full_3_rank_idealstep.sage 3optimal_searchdata_sorted 5 4 &
     
-  The output files now contain a total of ???? unique discriminants whose fields have 3-rank at least 2. 
+  The output files now contain a total of 624805 unique discriminants whose fields have 3-rank at least 2. The total run time of the computation was 876.62 seconds, but this was done in 4 parallel computations so took only a few minutes in real time. 
         
         
