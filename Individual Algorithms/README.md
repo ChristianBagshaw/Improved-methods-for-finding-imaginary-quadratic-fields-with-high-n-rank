@@ -91,3 +91,6 @@ This computation took approximately 30 seconds. `D` now contains 16 discriminant
 ```
 [-3299, -3896, -4027, -6583, -11651, -16627, -17399, -19427, -19651, -19679, -27355, -28031, -28279, -31271, -31639, -31999]
 ```
+
+
+## mestre_curve_()
