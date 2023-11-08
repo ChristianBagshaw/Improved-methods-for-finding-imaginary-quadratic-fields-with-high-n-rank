@@ -13,9 +13,9 @@ def p_rank_allsteps(p, lambda_pairs, lower_m1, upper_m1, explicit_testing_3 = Fa
 
     Algorithm 3.2 - "Improved Alg"
 
-    This runs Algorithm 3.2. The best way to understand this is to read this algorithm in the paper. Note that this function runs the algorithm in full, on one node in one computation. Thus, it is suitable for smaller computations to generate discriminants with non-trivial p-rank. For a large computation, see "INSERT NAME OF FULL, LARGE ALGORITHM"
+    This runs Algorithm 3.2. The best way to understand this is to read this algorithm in the paper. Note that this function runs the algorithm in full, on one node in one computation. Thus, it is suitable for smaller computations to generate discriminants with non-trivial p-rank. 
 
-    Algorithm 3.2 uses two slightly different ideas, depending on whether p=3 or p > 3. By default, this function below the optimal algorithm for a given value of p, but there is a flag provided to allow p=3 to run the other branch (perform explicit ideal independence testing). This will produce more discriminants for a given input, but is not worth the increase in run-time. 
+    Algorithm 3.2 uses two slightly different ideas, depending on whether p=3 or p > 3. By default, this function runs the optimal algorithm for a given value of p, but there is a flag provided to allow p=3 to run the other branch (perform explicit ideal independence testing). This will produce more discriminants for a given input, but is not worth the increase in run-time. 
     
     Note that memory will quickly become an issue if this code is run verbatim for a large computation, since a lot of data is being stored in dictionaries. In a large computation, this data should be stored outside of memory. 
   
